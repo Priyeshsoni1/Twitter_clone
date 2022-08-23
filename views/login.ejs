@@ -1,0 +1,80 @@
+<!-- Login -->
+
+
+
+<!-- Variables needed to render the page -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="css/login-register.css">
+    <script src="https://kit.fontawesome.com/7caf9c456e.js" crossorigin="anonymous"></script>
+    <title>Twitter | Login</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        background: scroll linear-gradient(45deg,#333,#456,rgba(211,150,17,0.877),rgb(48,137,153),#bb6);
+    }
+    ::-webkit-scrollbar{
+        width: .9rem;
+    }
+    ::-webkit-scrollbar-track{
+        background: aqua;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: white;
+        border-radius: 1rem;
+        border: 0.2rem solid transparent;
+        background-clip: content-box;
+    }
+    .login-container{
+        border: 2px solid rgb(0, 149, 255);
+        border-radius: 20px;
+        background: white;
+    }
+   h1{
+        background: rgb(255, 255, 255);
+    }
+    .login-container .form{
+        background: white;
+    }
+    input{
+        border: 1.5px solid black;
+        background: rgb(191, 219, 217);
+    }
+    a{
+        background: white;
+    }
+</style>
+
+<body>
+    <div class="login-container">
+        <i class="fab fa-twitter"></i>
+        <h1 class="form-title">Log in to Twitter</h1>
+        <form class="form" action="/login" method="post">
+            <p class="error">
+                <%= locals.errorMessage %>
+            </p>
+            <p class="success">
+                <%= locals.successMessage %>
+            </p>
+            <input type="text" name="loginUsername" placeholder="Email or username" autocomplete="off"
+                required>
+            <input type="password" name="loginPassword" placeholder="Password" autocomplete="off" 
+                required>
+            <button class="btn" type="submit">Log in</button>
+        </form>
+        <a class="link" href="/register">Sign up for Twitter</a>
+    </div>
+</body>
+
+</html>
